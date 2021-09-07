@@ -14,8 +14,8 @@ const SignIn = ({ onSubmit, onClick }) => {
       onSubmit={onSubmit}
     >
       <Form className='form'>
-        <div className="input-group mb-3">
-          <span class="input-group-text" id="basic-addon1">@</span>
+        <div className='input-group mb-3'>
+          <span className='input-group-text' id='basic-addon1'>@</span>
           <Field
             type='text'
             id='email'
@@ -23,10 +23,10 @@ const SignIn = ({ onSubmit, onClick }) => {
             className='form-control'
             placeholder='Email'
           />
-          <ErrorMessage component="span" name='email' />
+          <ErrorMessage component='span' name='email' />
         </div>
-        <div className="input-group mb-3">
-          <span class="input-group-text" id="basic-addon1">*</span>
+        <div className='input-group mb-3'>
+          <span className='input-group-text' id='basic-addon1'>*</span>
           <Field
             type='password'
             id='password'
@@ -34,9 +34,9 @@ const SignIn = ({ onSubmit, onClick }) => {
             className='form-control'
             placeholder='Password'
           />
-          <ErrorMessage component="span" name='password' />
+          <ErrorMessage component='span' name='password' />
         </div>
-        <div className="d-flex justify-content-between">
+        <div className='d-flex justify-content-between'>
           <button
             type='submit'
             className='btn btn-success'
@@ -45,7 +45,7 @@ const SignIn = ({ onSubmit, onClick }) => {
           </button>
           <button
             className='btn btn-success'
-            onclick={onClick}
+            onClick={onClick}
           >
             SIGN UP
           </button>
