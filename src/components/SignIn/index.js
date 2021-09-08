@@ -1,5 +1,8 @@
+import PropTypes from 'prop-types'
+import { FaRegEnvelope } from 'react-icons/fa'
 import { SignInSchema } from '../../constants/YupSchemas'
 import { Formik, Form, Field, ErrorMessage } from 'formik'
+import './style.css'
 
 const SignIn = ({ onSubmit, onClick }) => {
   const initialValues = {
@@ -13,9 +16,14 @@ const SignIn = ({ onSubmit, onClick }) => {
       validationSchema={SignInSchema}
       onSubmit={onSubmit}
     >
-      <Form className='form'>
+      <Form className='form form__signin'>
         <div className='input-group mb-3'>
-          <span className='input-group-text' id='basic-addon1'>@</span>
+          <span
+            className='input-group-text'
+            id='basic-addon1'
+          >
+            <FaRegEnvelope />
+          </span>
           <Field
             type='text'
             id='email'
@@ -23,8 +31,13 @@ const SignIn = ({ onSubmit, onClick }) => {
             className='form-control'
             placeholder='Email'
           />
-          <ErrorMessage component='span' name='email' />
         </div>
+
+        <ErrorMessage
+          name='email'
+          render={msg => <div className='d-block text-danger my-3'>{ msg }</div>}
+        />
+
         <div className='input-group mb-3'>
           <span className='input-group-text' id='basic-addon1'>*</span>
           <Field
@@ -34,8 +47,13 @@ const SignIn = ({ onSubmit, onClick }) => {
             className='form-control'
             placeholder='Password'
           />
-          <ErrorMessage component='span' name='password' />
         </div>
+
+        <ErrorMessage
+          name='password'
+          render={msg => <div className='d-block text-danger my-3'>{ msg }</div>}
+        />
+
         <div className='d-flex justify-content-between'>
           <button
             type='submit'
@@ -53,6 +71,11 @@ const SignIn = ({ onSubmit, onClick }) => {
       </Form>
     </Formik>
   )
+}
+
+SignIn.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
+  onClick: PropTypes.func.isRequired
 }
 
 export default SignIn

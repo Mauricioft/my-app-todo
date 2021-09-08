@@ -1,4 +1,6 @@
-const SignUp = ({ history }) => {
+import PropTypes from 'prop-types'
+
+const SignUpPage = ({ history }) => {
   const handleClick = () => {
     history.replace('/')
   }
@@ -17,4 +19,11 @@ const SignUp = ({ history }) => {
   )
 }
 
-export default SignUp
+SignUpPage.propTypes = {
+  history: PropTypes.shape({
+    push: PropTypes.func.isRequired,
+    replace: PropTypes.func.isRequired
+  })
+}
+
+export default SignUpPage
