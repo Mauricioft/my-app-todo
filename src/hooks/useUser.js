@@ -3,7 +3,6 @@ import { useHistory } from 'react-router-dom'
 import { signInService } from '../services/auth'
 import AuthContext from '../context/AuthContext'
 import { LOGIN, LOGOUT } from '../types'
-// https://www.bezkoder.com/react-hooks-jwt-auth/
 
 const useUser = () => {
   const history = useHistory()
@@ -21,7 +20,7 @@ const useUser = () => {
         })
         history.replace('/')
       })
-      .catch((err) => {
+      .catch(() => {
         setState({ loading: false, error: true })
       })
   }, [])

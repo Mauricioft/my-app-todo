@@ -1,7 +1,8 @@
 import Api from './api'
 
 const signInService = async (params) => {
-  return await Api.post('user/login', params)
+  const response = await Api.post('user/login', params)
+  return response.data
 }
 
 export {

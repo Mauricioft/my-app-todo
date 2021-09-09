@@ -1,19 +1,13 @@
-import { useContext } from 'react'
-import { API_URL } from '../constants/settings'
-import AuthContext from '../context/AuthContext'
 import axios from 'axios'
+import { API_URL } from '../constants/settings'
+import useToken from '../hooks/useToken'
 
-const getHeader = () => {
-  const { user } = useContext(AuthContext)
-
-  if(!user.logged) return {}
-
-  return {
-    Authorization: `Bearer ${user.token}`
-  }
+const getHeaders = () => {
+  const token = useToken({ keyword: 'user' })
+  return token
 }
 
 export default axios.create({
   baseURL: `${API_URL}/`,
-  headers: getHeader()
+  headers: getHeaders()
 })
