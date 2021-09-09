@@ -4,6 +4,7 @@ import {
   Redirect
 } from 'react-router-dom'
 import Menu from '../components/Menu'
+import Footer from '../components/Footer'
 import Home from '../pages/Home'
 
 const DashboardRoutes = () => {
@@ -20,6 +21,7 @@ const DashboardRoutes = () => {
           <Redirect to='/home' />
         </Switch>
       </main>
+      <Footer />
     </>
   )
 }
