@@ -5,3 +5,12 @@ body {
 .cursor-pointer {
   cursor: pointer;
 }
+
+.mx-auto {
+  margin-right: auto!important;
+  margin-left: auto!important;
+}
+
+.vh-90 {
+  height: 90vh;
+}

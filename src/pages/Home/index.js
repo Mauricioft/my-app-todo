@@ -1,9 +1,9 @@
 import Alert from 'react-bootstrap/Alert'
-import useTask from '../../hooks/useTask'
-import TodoList from '../../components/TodoList'
+import useTasks from '../../hooks/useTasks'
+import TaskList from '../../components/TaskList'
 
 const Home = () => {
-  const { taskList, hasLoading, hasError } = useTask()
+  const { tasks, hasLoading, hasError } = useTasks()
 
   return (
     <>
@@ -12,7 +12,7 @@ const Home = () => {
       }
       {
         !hasLoading && (
-          <TodoList list={taskList} />
+          <TaskList tasks={tasks} />
         )
       }
       {

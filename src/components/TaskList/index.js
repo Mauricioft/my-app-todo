@@ -5,10 +5,10 @@ import useSortableData from '../../hooks/useSortableData'
 import useFilteredTask from '../../hooks/useFilteredTask'
 import { parseDate } from '../../utils/date'
 
-const TodoList = ({ list }) => {
+const TaskList = ({ tasks }) => {
   const [isCheck, setIsCheck] = useState([])
   const [keyword, setKeyword] = useState('')
-  const { items, requestSort, sortConfig } = useSortableData({ items: list })
+  const { items, requestSort, sortConfig } = useSortableData({ items: tasks })
   const { filteredList } = useFilteredTask({ items, keyword })
 
   const getClassNamesFor = name => {
@@ -131,8 +131,8 @@ const TodoList = ({ list }) => {
   )
 }
 
-TodoList.propTypes = {
-  list: PropTypes.array.isRequired
+TaskList.propTypes = {
+  tasks: PropTypes.array.isRequired
 }
 
-export default TodoList
+export default TaskList

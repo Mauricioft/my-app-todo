@@ -1,17 +1,17 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useContext } from 'react'
 import { taskListService } from '../services/task'
+import { TasksContext } from '../context/TasksContext'
 
-const useTask = () => {
+const useTasks = () => {
   const [state, setState] = useState({ loading: false, error: false })
-  const [taskList, setTaskList] = useState([])
+  const { tasks, taskList } = useContext(TasksContext)
 
   useEffect(() => {
     setState({ loading: true, error: false })
     taskListService()
       .then(response => {
-        console.log('root.useTask@response', response)
         setState({ loading: false, error: false })
-        setTaskList(response.data)
+        taskList(response.data)
       })
       .catch(() => {
         setState({ loading: false, error: true })
@@ -19,10 +19,10 @@ const useTask = () => {
   }, [])
 
   return {
-    taskList,
+    tasks,
     hasLoading: state.loading,
     hasError: state.error
   }
 }
 
-export default useTask
+export default useTasks

@@ -23,7 +23,13 @@ module.exports = {
     quotes: ['error', 'single'],
     'jsx-quotes': ['error', 'prefer-single'],
     'react/react-in-jsx-scope': 'off',
-    indent: ['error', 2],
+    indent: [
+      2,
+      2,
+      {
+        SwitchCase: 1
+      }
+    ],
     'no-console': 'off'
   }
 }

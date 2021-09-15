@@ -6,8 +6,12 @@ import NavDropdown from 'react-bootstrap/NavDropdown'
 
 const Menu = () => {
   return (
-    <Navbar bg='light' expand='lg'>
-      <Container fluid>
+    <Navbar
+      bg='dark'
+      variant='dark'
+      expand='lg'
+    >
+      <Container>
         <Navbar.Brand as={Link} to='/home'>TODO</Navbar.Brand>
         <Navbar.Toggle aria-controls='basic-navbar-nav' />
         <Navbar.Collapse id='basic-navbar-nav'>

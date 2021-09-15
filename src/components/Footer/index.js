@@ -2,10 +2,10 @@ import './style.css'
 
 const Footer = () => {
   return (
-    <footer className='footer mt-auto py-3 bg-light'>
-      <div className='container-fluid'>
-        <span className='text-muted'>footer</span>
-      </div>
+    <footer className='footer | mt-auto | py-3 | text-center bg-dark text-white-50'>
+      <p>
+        Cover template for Bootstrap, by mauricioft93.
+      </p>
     </footer>
   )
 }
